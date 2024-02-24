@@ -324,10 +324,10 @@ namespace Fusion {
               nameof(sceneParams));
           }
 
-          if (loadSceneMode == LoadSceneMode.Single) {
+          if (loadSceneMode == LoadSceneMode.Additive) {
             // all the current scenes need to be "unloaded", except possibly for the one
             // that matches the sceneRef, if scene take over is enabled
-            loadSceneMode = LoadSceneMode.Additive;
+            loadSceneMode = LoadSceneMode.Single;
 
             try {
               foreach (var root in _multiPeerSceneRoots) {

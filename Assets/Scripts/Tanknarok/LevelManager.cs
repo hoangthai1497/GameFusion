@@ -160,7 +160,11 @@ namespace FusionExamples.Tanknarok
 
 			// Delay one frame
 			yield return null;
-
+			if (newScene.AsIndex > 1)
+			{
+				Debug.Log("Unload lobby");
+				UnloadScene(SceneRef.FromIndex(_lobby));
+			}
 			onStatusUpdate?.Invoke( Runner, FusionLauncher.ConnectionStatus.Loaded, "");
 			
 			// Activate the next level
